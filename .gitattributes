@@ -1,0 +1,7 @@
+# Text files are stored and checked out with LF endings on every OS.
+* text=auto eol=lf
+*.exe binary
+
+# Written by tools\amalgamate.ps1 from fastfib.c and src\: excluded from
+# GitHub's language stats and collapsed in diffs.
+dist/fastfib.c linguist-generated

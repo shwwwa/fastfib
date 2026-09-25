@@ -1,0 +1,17 @@
+# build outputs
+*.exe
+*.o
+*.obj
+*.s
+tests/out/
+tests/sprof_out.txt
+
+# Python
+__pycache__/
+*.pyc
+
+# editors: Emacs backups and lock files, clangd's index
+*~
+\#*\#
+.#*
+.cache/

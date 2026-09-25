@@ -1,0 +1,5 @@
+# Editor (clangd) settings. The src/ modules are unity-build pieces: each one
+# includes the modules it depends on so it can be analyzed on its own, and
+# functions declared early may be defined in a later module.
+CompileFlags:
+  Add: [-xc, -std=gnu17, -march=native, -Wall, -Wno-unused-function, -Wno-pragma-once-outside-header, -Wno-undefined-internal]
