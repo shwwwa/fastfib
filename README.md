@@ -1,6 +1,6 @@
 # fastfib
-Exact Fibonacci numbers F(n) for very large n, written from scratch in C
-(no GMP or other bignum library). Fast doubling on top of a three-prime
+Fast fibonacci finder program, written from scratch in C
+(no libraries). Fast doubling on top of a three-prime
 number-theoretic-transform multiply, vectorized with AVX2 and multithreaded.
 
 <sub>inspired by https://www.youtube.com/watch?v=KzT9I1d-LlQ</sub>
@@ -61,14 +61,12 @@ variables when set.
   are transformed once and combined pointwise.
 - **Decimal output** by divide and conquer with Barrett division by powers
   of 10^19.
-- **Infrastructure.** A thread pool with fork-join task groups, one thread
-  per logical CPU, and an arena allocator that reuses already-touched pages.
 
-Below the NTT sizes it uses schoolbook, Karatsuba and Toom-3.
+Below the NTT sizes it uses schoolbook, Karatsuba and Toom-3 methods of calculation.
 
 ## Layout
 
-`fastfib.c` is the program: a unity build that includes the modules in
+`fastfib.c` is the unity build program that includes the modules in
 `src/` in order, so the compiler sees one translation unit and inlines across
 modules. Build only `fastfib.c`, never the `src/` files alone.
 
